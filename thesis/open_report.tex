@@ -1,0 +1,31 @@
+\documentclass[openReport]{XaufeThesisTemplate}
+
+\begin{document}
+
+\input{information.tex}
+\input{sections/open_report/cover}
+\input{sections/open_report/requirements}
+
+% 表格正文
+\begin{sectionCell}
+  \section{选题背景和意义}
+\end{sectionCell}
+\begin{sectionCell}
+  \section{研究基础和主要参考文献}
+    \subsection{研究基础}
+    \subsection{参考文献}
+      \bibliography{reference/reference}
+      \nocite{*}
+\end{sectionCell}
+\begin{sectionCell}
+  \section{主要研究内容}
+\end{sectionCell}
+\begin{sectionCell}
+  \section{拟采取的研究方法和技术路线}
+\end{sectionCell}
+\begin{sectionCell}
+  \section{研究计划及进度安排}
+\end{sectionCell}
+\input{sections/open_report/signature}
+
+\end{document}

@@ -1,0 +1,65 @@
+% \documentclass{XaufeThesisTemplate}
+\documentclass[draft]{XaufeThesisTemplate}
+% \documentclass[draft,ebook]{XaufeThesisTemplate}
+%%%%%%%%%%%%%%
+
+\input{information.tex}
+
+\usepackage{subfiles}
+\begin{document}
+
+\input{sections/cover}
+\subfile{sections/statement}
+
+\pagenumbering{roman}
+
+\subfile{explanations/global}
+\listoftodos
+
+\subfile{sections/abstract}
+% \subfile{sections/english_abstract}
+
+% Table of Contents
+\setcounter{tocdepth}{3}
+\tableofcontents
+\newpage
+
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\ifdraft{
+	\subfile{explanations/text}
+}{}
+\section{序言}
+	\subfile{sections/introduction}
+\section{符号说明}
+	\subfile{sections/symbols}
+
+\ifdraft{
+	\subfile{explanations/reference}
+}{}
+
+	\pagebreak
+\bibliography{reference/reference}
+\nocite{*}
+
+\pagebreak
+\begin{appendices} % 附录
+	\ifdraft{
+		\subfile{explanations/attachment}
+	}{}
+  \section{程序清单}
+  \section{电路原理图}
+\end{appendices}
+
+\pagebreak
+\thanksSection
+	\subfile{sections/thanks}
+
+\ifdraft{
+	\logItem{2022-04-05}{如果涉及实验实验可以用\lstinline{\\logItem{时间}{关键词}}}
+		\begin{itemize}
+			\item 现象；
+		\end{itemize}
+}{}
+\end{document}
